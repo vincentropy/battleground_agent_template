@@ -1,0 +1,43 @@
+{
+  "num_games":3,
+  "max_turns":1000,
+  "move_delay":0.1,
+  "game_delay":0.1,
+  "game":{
+    "name":"Basic Test Game",
+    "type":"basic_game",
+    "local_path":"battleground.games.basic_game.basic_game_engine",
+    "class_name":"BasicGameEngine",
+    "settings":{}
+  },
+  "players":[
+    {
+      "owner":"core",
+      "name":"basic_1",
+      "local_path":"battleground.games.basic_game.basic_agent",
+      "class_name":"BasicAgent",
+      "remote_path":null
+    },
+    {
+      "owner":"command_line",
+      "name":"my_agent",
+      "local_path":"my_agent",
+      "class_name":"MyAgent",
+      "remote_path":null
+    },
+    {
+      "owner":"command_line",
+      "name":"my_agent_2",
+      "local_path":"my_agent",
+      "class_name":"MyAgent",
+      "remote_path":null
+    },
+    {
+      "owner":"command_line",
+      "name":"my_persistent_agent",
+      "local_path":"my_persistent_agent",
+      "class_name":"MyPersistentAgent",
+      "remote_path":null
+    }
+  ]
+}
