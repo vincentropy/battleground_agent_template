@@ -21,21 +21,21 @@
     {
       "owner":"command_line",
       "name":"my_agent",
-      "local_path":"my_agent",
+      "local_path":"basic_agent.my_agent",
       "class_name":"MyAgent",
       "remote_path":null
     },
     {
       "owner":"command_line",
       "name":"my_agent_2",
-      "local_path":"my_agent",
+      "local_path":"basic_agent.my_agent",
       "class_name":"MyAgent",
       "remote_path":null
     },
     {
       "owner":"command_line",
       "name":"my_persistent_agent",
-      "local_path":"my_persistent_agent",
+      "local_path":"basic_agent.my_persistent_agent",
       "class_name":"MyPersistentAgent",
       "remote_path":null
     }

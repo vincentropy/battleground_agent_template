@@ -17,6 +17,6 @@ class MyAgent(Agent):
             else:
                 # default value
                 move["value"] = random.randint(1, 100)
-                print("Agent is taking default values.")
+                # print("Agent is taking default values.")
 
         return move
