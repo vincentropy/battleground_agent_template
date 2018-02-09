@@ -9,7 +9,8 @@
     "local_path":"battleground.games.arena.arena_game",
     "class_name":"ArenaGameEngine",
     "mods":{"builder_path": "battleground.games.arena.mods.mod_builder",
-            "mod_paths":["battleground.games.arena.mods.boosts"
+            "mod_paths":["battleground.games.arena.mods.position",
+                         "battleground.games.arena.mods.boosts"
                          ]
             },
     "settings":{}
