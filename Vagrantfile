@@ -58,10 +58,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
   sudo apt-get update
   sudo apt-get install -y zsh curl python3 python3-venv
-  sudo apt-get install -y ruby ruby-dev gcc make
-  git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
-  cp .oh-my-zsh/templates/zshrc.zsh-template .zshrc
-  sudo chsh -s /bin/zsh ubuntu
+  sudo apt-get install -y ruby ruby-dev gcc make language-pack-en
 
   sudo echo "
   source ~/python3/bin/activate
@@ -72,6 +69,11 @@ Vagrant.configure("2") do |config|
 
   # do some more setup as a non-priviliged user
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+
+  git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
+  cp .oh-my-zsh/templates/zshrc.zsh-template .zshrc
+  sudo chsh -s /bin/zsh $(whoami)
+
   pyvenv python3
   . ./python3/bin/activate
   pip install --upgrade pip
