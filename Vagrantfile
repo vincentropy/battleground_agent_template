@@ -59,12 +59,6 @@ Vagrant.configure("2") do |config|
   sudo apt-get update
   sudo apt-get install -y zsh curl python3 python3-venv
   sudo apt-get install -y ruby ruby-dev gcc make language-pack-en
-
-  sudo echo "
-  source ~/python3/bin/activate
-  cd /vagrant
-  export PYTHONPATH=$PYTHONPATH:/vagrant
-  " >> .zshrc
   SHELL
 
   # do some more setup as a non-priviliged user
@@ -73,6 +67,12 @@ Vagrant.configure("2") do |config|
   git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
   cp .oh-my-zsh/templates/zshrc.zsh-template .zshrc
   sudo chsh -s /bin/zsh $(whoami)
+
+  sudo echo "
+  source ~/python3/bin/activate
+  cd /vagrant
+  export PYTHONPATH=$PYTHONPATH:/vagrant
+  " >> .zshrc
 
   pyvenv python3
   . ./python3/bin/activate
