@@ -4,7 +4,7 @@
   "move_delay":0.1,
   "game_delay":0.1,
   "game":{
-    "name":"Arena Game",
+    "name":"Arena Game (pb)",
     "type":"arena_game",
     "local_path":"battleground.games.arena.arena_game",
     "class_name":"ArenaGameEngine",
