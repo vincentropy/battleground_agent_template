@@ -69,3 +69,30 @@ if you want to see any errors that occur (useful when debugging), set `DEBUG=Tru
 ```
 DEBUG=True battleground_start --no_save --config ./config/arena_config.json
 ```
+
+The output will look something like this:
+```
+starting battleground ...
+arena_game_pos
+[2, 0, 0]
+[0, 0, 2]
+[1, 0, 0]
+[2, 0, 0]
+[1, 0, 0]
+[0, 0, 2]
+[1, 0, 0]
+[0, 0, 2]
+[2, 0, 0]
+[2, 0, 0]
+Win rates:
+my_gladiator: 0.7000
+Random Walker: 0.0000
+Attacker: 0.3000
+```
+
+See if you can change the `arena_game/my_arena_agent.py` file to increase your winrate.
+
+### Compete with other players
+
+So far, you've only run your agent locally and played against some built-in agents. If you want to test your agent against agents made by other people, upload your agent file to the Arenarium platform.
+  
