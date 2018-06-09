@@ -72,6 +72,7 @@ Vagrant.configure("2") do |config|
   source ~/python3/bin/activate
   cd /vagrant
   export PYTHONPATH=$PYTHONPATH:/vagrant
+  export DEBUG=True
   " >> .zshrc
 
   pyvenv python3

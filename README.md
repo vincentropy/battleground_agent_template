@@ -1,52 +1,47 @@
 # Agent Template
-Develop your own agents for the battleground platform
+Develop your own agents for the Arenarium.
 
 ## System setup
 You can develop agents using any of your own favorite tools,
-just adapt the my_agent.py and/or my_persistent_agent.py examples.
+just adapt the `my_agent.py` and/or `my_persistent_agent.py` examples.
 
-Debugging your agents locally requires you to run the battleground platform locally.
-There are 2 ways to do this:
-1. Using a virtual machine and vagrant
-2. Running/Installing natively
+If you are familiar with [vagrant](https://www.vagrantup.com/docs/installation/), you can use the provided vagrant file. If not, don't worry, setting up natively is quick and easy.
 
-### 1. Using Vagrant  
-If you are already familiar with Vagrant, this is probably the easiest way to go.
-Make sure you follow all the [installation instructions for vagrant.](https://www.vagrantup.com/docs/installation/)
-Then run
-```
-vagrant up
-```
-in the folder that contains the Vagantfile supplied in this repo.
+### Requirements:
+- Python 3.4+
+- Docker (optional, to be able to save games and agent memory)
 
-you can then connect to your virtual machine using
-```
-vagrant ssh
-```
+#### 1. Download
+Clone or [download](https://github.com/arenarium/battleground_agent_template/archive/master.zip) this repo into a new folder on your local machine.
 
-### 2. Native setup
-This method is a bit more involved.
-- [install Docker](https://www.docker.com/community-edition)
-- [install python 3 on your system](https://www.python.org/)
-- your probably want to [create a virtual environment](https://docs.python.org/3/tutorial/venv.html)
+#### 2. Setting up
+*If you are using Vagrant to can skip to the next section.*
 
-then start a local mongoDB container:
-```
-docker run docker run -d mongo
-```
+We will assume that you already have python installed. And that you are familiar with using python from the terminal/command line.
+
+Your probably want to [create a virtual environment](https://docs.python.org/3/tutorial/venv.html)
 
 **activate your virtual enviromnent** and then install the requirements:
 ```
 pip install --upgrade -r requirements.txt
 ```
 
-## Configuring and running a game
+**optional:**
+
+[Install Docker following instructions here](https://www.docker.com/community-edition), and start a local mongoDB container:
+```
+docker run docker run -d mongo
+```
+
+## Running your first game
 
 Ok, now we're ready to play!
-edit the example_config.json file to determine what game configuration you want to play.
-Then run the game server:
+
+You can configure a lot about the game you want to play and which agents are playing. For now, we'll use the `example_config.json` file to determine what game configuration you want to play.
+Then run the game server (if you configured mongoDB, you can omit the `--no_save` flag):
+
 ```
-battleground_start --config ./example_config.json
+battleground_start --no_save --config ./config/example_config.json
 ```
 
 The output should look something like:
@@ -59,3 +54,18 @@ basic_game
 ```
 
 These numbers are the final scores of each of the 4 players in each of the 3 games that were played.
+
+The game we've played so far is just a simple random number guessing game. It's not a very interesting game, but it's instructive to see how the arenarium works. Have a look at the agent code in `basic_game/my_agent.py`. To see how to use an agent with memory you can look at `basic_game/my_persistent_agent.py`.
+
+## Running the Arena game
+This is where things get interesting!
+
+```
+battleground_start --no_save --config ./config/arena_config.json
+```
+
+if you want to see any errors that occur (useful when debugging), set `DEBUG=True` as an environment variable. For example:
+
+```
+DEBUG=True battleground_start --no_save --config ./config/arena_config.json
+```
