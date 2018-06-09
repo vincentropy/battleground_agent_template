@@ -5,23 +5,23 @@ Develop your own agents for the Arenarium.
 You can develop agents using any of your own favorite tools,
 just adapt the `my_agent.py` and/or `my_persistent_agent.py` examples.
 
-If you are familiar with [vagrant](https://www.vagrantup.com/docs/installation/), you can use the provided vagrant file. If not, don't worry, setting up natively is quick and easy.
+If you are familiar with [vagrant](https://www.vagrantup.com/docs/installation/), you can use the provided vagrant file. If not, don't worry, setting up without vagrant is quick and easy.
 
 ### Requirements:
 - Python 3.4+
 - Docker (optional, to be able to save games and agent memory)
 
 #### 1. Download
-Clone or [download](https://github.com/arenarium/battleground_agent_template/archive/master.zip) this repo into a new folder on your local machine.
+Clone or [download](https://github.com/arenarium/battleground_agent_template/archive/master.zip) this git repository into a new folder on your local machine.
 
 #### 2. Setting up
 *If you are using Vagrant to can skip to the next section.*
 
 We will assume that you already have python installed. And that you are familiar with using python from the terminal/command line.
 
-Your probably want to [create a virtual environment](https://docs.python.org/3/tutorial/venv.html)
+We recommend that you [create a python virtual environment](https://docs.python.org/3/tutorial/venv.html)
 
-**activate your virtual enviromnent** and then install the requirements:
+**activate your python virtual enviromnent** and then install the requirements:
 ```
 pip install --upgrade -r requirements.txt
 ```
@@ -95,4 +95,3 @@ See if you can change the `arena_game/my_arena_agent.py` file to increase your w
 ### Compete with other players
 
 So far, you've only run your agent locally and played against some built-in agents. If you want to test your agent against agents made by other people, upload your agent file to the Arenarium platform.
-  
