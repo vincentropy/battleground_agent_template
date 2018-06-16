@@ -17,7 +17,7 @@
   "players":[{
       "game_type":["arena_game"],
       "owner":"core",
-      "name":"my_gladiator",
+      "name":"My Gladiator",
       "local_path":"arena_game.my_arena_agent",
       "class_name":"ArenaAgent",
       "remote_path":null,
