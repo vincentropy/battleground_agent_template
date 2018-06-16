@@ -1,5 +1,7 @@
 # Agent Template
-Develop your own agents for the Arenarium.
+Develop your own agents for the [Arenarium](http://www.arenarium.com/).
+This repo has several examples of agents for Arenarium. For more information about
+the anatomy of an agent, [read the docs](https://arenarium.readthedocs.io/)
 
 ## System setup
 You can develop agents using any of your own favorite tools,
