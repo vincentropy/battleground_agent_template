@@ -19,7 +19,7 @@
     {
       "owner":"core",
       "name":"arena_1",
-      "local_path":"battleground.games.arena.arena_agent",
+      "local_path":"battleground.games.arena.agents.arena_agent",
       "class_name":"ArenaAgent",
       "remote_path":null
     },
