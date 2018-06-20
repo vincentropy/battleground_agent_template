@@ -77,23 +77,27 @@ Vagrant.configure("2") do |config|
     d.run "mongo",
       image: "mongo:3.4",
       args: "-v '/data:/data/db' -p 27017:27017"
-    d.run "mongo-express",
-      image: "mongo-express",
-      args: "--link mongo:mongo -p 8081:8081"
   end
 
-  config.vm.provision "shell", path: "bootstrap.sh"
+  # install dependencies
+  config.vm.provision "shell", inline: <<-SHELL
+  sudo apt-get update
+  sudo apt-get install -y zsh curl python3 python3-venv
+  sudo apt-get install -y ruby ruby-dev gcc make language-pack-en
+  SHELL
 
+  # do some more setup as a non-priviliged user
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
 
   git clone git://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh
   cp .oh-my-zsh/templates/zshrc.zsh-template .zshrc
   sudo chsh -s /bin/zsh $(whoami)
 
-  echo "
+  sudo echo "
   source ~/python3/bin/activate
   cd /vagrant
   export PYTHONPATH=$PYTHONPATH:/vagrant
+  export DEBUG=True
   " >> .zshrc
 
   pyvenv python3

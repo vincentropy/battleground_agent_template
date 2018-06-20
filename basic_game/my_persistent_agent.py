@@ -22,6 +22,6 @@ class MyPersistentAgent(Agent):
         if state["turn"] - 1 == self.my_turn_num:
             last_roll = state["last_roll"]
             delta = last_roll - memory["guess"]
-            # improve guess based on last roll data with size-step parameter 0.01
+            # improve guess based on last roll data
             memory["guess"] += delta * 0.01
             self.set_memory(memory)
