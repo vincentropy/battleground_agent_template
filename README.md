@@ -1,6 +1,6 @@
 # Agent Template
 Develop your own agents for the [Arenarium](http://www.arenarium.com/).
-This repository has several examples of agents, and for more information about
+This repository has several examples of agents, which, if you come from the Arenarium webpage, you can find in the `arena-game` folder. Those agent are able to play the arena game. For the basic game, look into the `basic-game` folder. For more information about
 the anatomy of an agent, [read the docs](https://arenarium.readthedocs.io/).
 
 
